@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for pages/AdminCoursesCreatePage.jsx</title>
+    <title>Code coverage report for pages/AdminChatPage.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> AdminCoursesCreatePage.jsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> AdminChatPage.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
@@ -106,73 +106,73 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
-import CourseForm from "main/components/Courses/CourseForm";
-import { useBackendMutation } from "main/utils/useBackend";
-import { Navigate } from "react-router";
-import { toast } from "react-toastify";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
+import { Row, Col } from "react-bootstrap";
+import { useParams } from "react-router";
+import { useBackend } from "main/utils/useBackend";
+import ChatDisplay from "main/components/Chat/ChatDisplay";
 &nbsp;
-export default function AdminCoursesCreatePage() {
-  const objectToAxiosParams = (newCourse) =&gt; ({
-    url: "/api/course",
-    method: "POST",
-    data: newCourse,
-  });
+export default function AdminChatPage() {
+  const { commonsId } = useParams();
 &nbsp;
-  const onSuccess = (course) =&gt; {
-    toast(`Course created - id: ${course.id} code: ${course.code}`);
-  };
+  // Stryker disable all
+  const { data: commonsPlus } = useBackend(
+    [`/api/commons/plus?id=${commonsId}`],
+    {
+      method: "GET",
+      url: "/api/commons/plus",
+      params: {
+        id: commonsId,
+      },
+    },
+  );
+  // Stryker restore all
 &nbsp;
-  const mutation = useBackendMutation(objectToAxiosParams, { onSuccess }, [
-    "/api/course/all",
-  ]);
-&nbsp;
-  const submitAction = async (data) =&gt; {
-    mutation.mutate(data);
-  };
-&nbsp;
-  if (mutation.isSuccess) {
-    return &lt;Navigate to="/admin/listcourses" /&gt;;
-  }
+  const commonsName = commonsPlus?.commons.name;
 &nbsp;
   return (
     &lt;BasicLayout&gt;
       &lt;div className="pt-2"&gt;
-        &lt;h1&gt;Create Course&lt;/h1&gt;
-        &lt;CourseForm submitAction={submitAction} /&gt;
+        &lt;Row className="pt-5"&gt;
+          &lt;Col&gt;
+            &lt;h2&gt;Chat for Commons: {commonsName}&lt;/h2&gt;
+            &lt;ChatDisplay commonsId={commonsId} /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
       &lt;/div&gt;
     &lt;/BasicLayout&gt;
   );
