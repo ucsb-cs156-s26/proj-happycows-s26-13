@@ -10,6 +10,7 @@ import LeaderboardPage from "main/pages/LeaderboardPage";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
 
+import AdminDashboardPage from "main/pages/AdminDashboardPage";
 import AdminUsersPage from "main/pages/AdminUsersPage";
 import AdminJobsPage from "main/pages/AdminJobsPage";
 import AdminCreateCommonsPage from "main/pages/AdminCreateCommonsPage";
@@ -29,6 +30,7 @@ import PlayPage from "main/pages/PlayPage";
 import NotFoundPage from "main/pages/NotFoundPage";
 import AdminViewPlayPage from "main/pages/AdminViewPlayPage";
 import AdminAnnouncementsPage from "main/pages/AdminAnnouncementsPage";
+import AdminChatPage from "main/pages/AdminChatPage";
 import AdminCreateAnnouncementsPage from "main/pages/AdminCreateAnnouncementsPage";
 import DeveloperPage from "main/pages/DeveloperPage";
 import ChatHistoryPage from "main/pages/ChatHistoryPage";
@@ -38,6 +40,7 @@ function App() {
 
   const adminRoutes = hasRole(currentUser, "ROLE_ADMIN") ? (
     <>
+      <Route path="/admin/dashboard/:id" element={<AdminDashboardPage />} />
       <Route path="/admin/users" element={<AdminUsersPage />} />
       <Route path="/admin/jobs" element={<AdminJobsPage />} />
       <Route path="/admin/reports" element={<AdminReportsPage />} />
@@ -66,6 +69,7 @@ function App() {
         path="/admin/announcements/:commonsId"
         element={<AdminAnnouncementsPage />}
       />
+      <Route path="/admin/chat/:commonsId" element={<AdminChatPage />} />
       <Route
         path="/admin/announcements/:commonsId/create"
         element={<AdminCreateAnnouncementsPage />}

@@ -442,6 +442,7 @@ describe("AdminCommonsCard tests", () => {
     );
 
     expect(screen.getByText("Edit")).toBeInTheDocument();
+    expect(screen.getByText("Dashboard")).toBeInTheDocument();
     expect(screen.getByText("Delete")).toBeInTheDocument();
     expect(screen.getByText("Leaderboard")).toBeInTheDocument();
     expect(screen.getByText("Stats CSV")).toBeInTheDocument();
@@ -607,6 +608,25 @@ describe("AdminCommonsCard tests", () => {
     expect(mockedNavigate).toHaveBeenCalledWith("/admin/editcommons/1");
   });
 
+  test("dashboard button navigates to dashboard page", () => {
+    const queryClient = new QueryClient();
+    const commonItem = commonsPlusFixtures.threeCommonsPlus[0];
+    const currentUser = currentUserFixtures.adminUser;
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <AdminCommonsCard commonItem={commonItem} currentUser={currentUser} />
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+    const dashboardButton = screen.getByTestId("AdminCommonsCard-Dashboard-1");
+    fireEvent.click(dashboardButton);
+
+    expect(mockedNavigate).toHaveBeenCalledWith("/admin/dashboard/1");
+  });
+
   test("leaderboard button navigates to leaderboard page", () => {
     const queryClient = new QueryClient();
     const commonItem = commonsPlusFixtures.threeCommonsPlus[0];
@@ -668,6 +688,23 @@ describe("AdminCommonsCard tests", () => {
       "href",
       "/admin/announcements/1",
     );
+  });
+
+  test("chat button has correct href", () => {
+    const queryClient = new QueryClient();
+    const commonItem = commonsPlusFixtures.threeCommonsPlus[0];
+    const currentUser = currentUserFixtures.adminUser;
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <AdminCommonsCard commonItem={commonItem} currentUser={currentUser} />
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+    const chatButton = screen.getByTestId("AdminCommonsCard-Chat-1");
+    expect(chatButton).toHaveAttribute("href", "/admin/chat/1");
   });
 
   test("handles null totalCows and effectiveCapacity", () => {
